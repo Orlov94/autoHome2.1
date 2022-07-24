@@ -9,14 +9,14 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ApplicationDebitCard {
+public class ApplicationDebitCardTest {
 
     private WebDriver driver;
 
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "/Users/vladislavorlov/Documents/Java Netology/auto home/autoHome2.1/driver/chromedriver");
+       System.setProperty("webdriver.chrome.driver", "/Users/vladislavorlov/Documents/Java Netology/auto home/autoHome2.1/driver/chromedriver");
 
     }
 
@@ -26,13 +26,13 @@ public class ApplicationDebitCard {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
+        driver.get("http://localhost:9999");
     }
 
 
     @Test
     void newCardApplication(){
-        driver.get("http://localhost:9999");
 
         driver.findElement(By.cssSelector("span[data-test-id='name'] input")).sendKeys("Михайлов Олег");
         driver.findElement(By.cssSelector("span[data-test-id='phone'] input")).sendKeys("+79253285723");
