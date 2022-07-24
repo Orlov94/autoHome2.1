@@ -43,7 +43,7 @@ public class ApplicationDebitCardTest {
 
     }
     @Test
-    void newCardApplicationDoubleSurname(){
+    void newCardApplicationDoubleSurname1(){
         driver.get("http://localhost:9999");
 
         driver.findElement(By.cssSelector("span[data-test-id='name'] input")).sendKeys("Ивано-Франк Константин");
