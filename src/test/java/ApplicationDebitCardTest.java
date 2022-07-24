@@ -44,7 +44,7 @@ public class ApplicationDebitCardTest {
     }
 
     @Test
-    void newCardApplicationDoubleSurname1() {
+    void newCardApplicationDoubleSurname() {
 
         driver.findElement(By.cssSelector("span[data-test-id='name'] input")).sendKeys("Ивано-Франк Константин");
         driver.findElement(By.cssSelector("span[data-test-id='phone'] input")).sendKeys("+79253273026");
