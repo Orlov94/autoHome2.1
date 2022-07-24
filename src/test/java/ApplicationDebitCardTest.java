@@ -17,7 +17,7 @@ public class ApplicationDebitCardTest {
 
     @BeforeAll
     static void setUpAll() {
-        WebDriverManager.chromedriver().setup();
+       System.setProperty("webdriver.chrome.driver","/Users/vladislavorlov/Documents/Java Netology/auto home/autoHome2.1/driver/chromedriver");
     }
 
     @BeforeEach
@@ -32,7 +32,7 @@ public class ApplicationDebitCardTest {
 
 
     @Test
-    void newCardApplication(){
+    void newCardApplication() {
 
         driver.findElement(By.cssSelector("span[data-test-id='name'] input")).sendKeys("Михайлов Олег");
         driver.findElement(By.cssSelector("span[data-test-id='phone'] input")).sendKeys("+79253285723");
@@ -42,9 +42,9 @@ public class ApplicationDebitCardTest {
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
 
     }
+
     @Test
-    void newCardApplicationDoubleSurname(){
-        driver.get("http://localhost:9999");
+    void newCardApplicationDoubleSurname1() {
 
         driver.findElement(By.cssSelector("span[data-test-id='name'] input")).sendKeys("Ивано-Франк Константин");
         driver.findElement(By.cssSelector("span[data-test-id='phone'] input")).sendKeys("+79253273026");
